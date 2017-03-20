@@ -86,3 +86,7 @@ func! Clang()
     exec "!clear && clang++ -std=c++11 % -o %<"  
     exec "! ./%<"  
 endfunc 
+""""""""""""""""""""""""""""""""""""""""tab
+map <c-Left> gT
+map <c-Right> gt
+map <c-t> :tabnew<CR><c-n>
