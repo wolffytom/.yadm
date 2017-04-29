@@ -45,8 +45,9 @@ let g:ycm_python_binary_path = 'python'
 highlight YcmErrorLine guibg=#3f0000
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 "let g:ycm_goto_buffer_command = 'horizontal-split'
-map <C-b> :YcmCompleter GoTo<CR><CR>
+map <c-b> :YcmCompleter GoTo<CR><CR>
 let g:ycm_autoclose_preview_window_after_insertion = 1
+map <c-c> :YcmCompleter GetType<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""
 Plugin 'easymotion/vim-easymotion'
 Plugin 'haya14busa/incsearch.vim'
@@ -88,3 +89,11 @@ func! Clang()
     exec "!clear && clang++ -std=c++11 % -o %<"  
     exec "! ./%<"  
 endfunc 
+""""""""""""""""""""""""""""""""""""""""tab
+map <c-Left> gT
+map <c-Right> gt
+map <c-t> :tabnew<CR><c-n>
+""""""""""""""""""""""""""""""""""""""""Reload .Vimrc
+"func! ReloadVimrc()
+"    exec "so $MYVIMRC"
+"endfunc
