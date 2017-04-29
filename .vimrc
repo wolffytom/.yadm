@@ -23,7 +23,7 @@ set number
 " highlight matching braces
 set showmatch
 " intelligent comments
-
+filetype plugin on
 
 """""""""""""Vundle"""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
@@ -76,6 +76,8 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Plugin 'suan/vim-instant-markdown'
 """"""""""""""""""""""""""""""""""""""""""""""""""""
 call vundle#end()            " required
 filetype plugin indent on    " required
