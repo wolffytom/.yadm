@@ -2,6 +2,9 @@
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
+
+let &termencoding=&encoding
+set fileencodings=utf-8,gbk,ucs-bom,cp936
 " disable vi compatibility (emulation of old bugs)
 set nocompatible
 " use indentation of previous line
@@ -83,12 +86,17 @@ let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 call vundle#end()            " required
 filetype plugin indent on    " required
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""shortcut
-map <f5> :call Clang()<CR>
+map <f5> :call Python()<CR>
 func! Clang()
-    exec "w"  
+    exec "w"
     exec "!clear && clang++ -std=c++11 % -o %<"  
     exec "! ./%<"  
 endfunc 
+
+func! Python()
+    exec "w"
+    exec "!python3 %"
+endfunc
 """"""""""""""""""""""""""""""""""""""""tab
 map <c-Left> gT
 map <c-Right> gt
